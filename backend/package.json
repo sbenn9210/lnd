@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "build-db": "node src/db/migrate.js",
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shawn",
+  "license": "ISC",
+  "dependencies": {
+    "@radar/lnrpc": "^0.11.1-beta.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-ws": "^5.0.2",
+    "nodemon": "^2.0.14",
+    "pg": "^8.7.1",
+    "sequelize": "^6.7.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
+  }
+}

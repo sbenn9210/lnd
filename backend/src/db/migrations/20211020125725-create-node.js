@@ -1,7 +1,7 @@
 "use strict";
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable("Node", {
+    await queryInterface.createTable("node", {
       id: {
         allowNull: false,
         primaryKey: true,
@@ -15,25 +15,25 @@ module.exports = {
         type: Sequelize.STRING,
       },
       cert: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       macaroon: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       pubkey: {
         type: Sequelize.STRING,
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE,
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE,
       },
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("Node");
+    await queryInterface.dropTable("node");
   },
 };

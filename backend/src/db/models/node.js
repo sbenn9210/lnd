@@ -1,5 +1,6 @@
 "use strict";
 const { Model } = require("sequelize");
+const { v4: uuid } = require("uuid");
 module.exports = (sequelize, DataTypes) => {
   class Node extends Model {
     /**
@@ -15,15 +16,14 @@ module.exports = (sequelize, DataTypes) => {
     {
       token: DataTypes.STRING,
       host: DataTypes.STRING,
-      cert: DataTypes.STRING,
-      macaroon: DataTypes.STRING,
+      cert: DataTypes.TEXT,
+      macaroon: DataTypes.TEXT,
       pubkey: DataTypes.STRING,
     },
     {
       sequelize,
       modelName: "Node",
-      tableName: "user",
-      paranoid: true,
+      tableName: "node",
       underscored: true,
       createdAt: "created_at",
       updatedAt: "updated_at",

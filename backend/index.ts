@@ -1,9 +1,6 @@
 import cors from "cors";
 import express, { Request, Response } from "express";
 import expressWs from "express-ws";
-import { Post, SocketEvents } from "./shared/types";
-import nodeManager from "./node-manager";
-import db, { PostEvents } from "./posts-db";
 import * as routes from "./routes";
 
 const PORT = 4000;
@@ -39,6 +36,8 @@ export const catchAsyncErrors = (
     }
   };
 };
+
+app.post("/api/connect", catchAsyncErrors(routes.connect));
 
 app.listen(PORT, () => {
   console.log(`Listening at http://localhost:${PORT}`);
